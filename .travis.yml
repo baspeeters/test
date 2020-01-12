@@ -6,11 +6,18 @@ node_js:
 
 cache: npm
 
+jobs:
+  include:
+    - stage: lint
+      script: npm run lint
+    - stage: deploy
+      node_js: node
+      script:
+        - npm run build:clean
+        - npm run build:npm
+        - npm publish
+
 deploy:
   provider: npm
   email: "$NPM_EMAIL"
   api_key: "$NPM_TOKEN"
-  on:
-    branch: master
-    tags: true
-

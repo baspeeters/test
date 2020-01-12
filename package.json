@@ -4,7 +4,9 @@
   "description": "Stuff.",
   "main": "main.js",
   "scripts": {
-    "test": "true"
+    "test": "true",
+    "lint": "true",
+    "build:npm": "cat main.js"
   },
   "repository": {
     "type": "git",
