@@ -6,6 +6,7 @@
   "scripts": {
     "test": "true",
     "lint": "true",
+    "build:clean": "echo 'so clean.'",
     "build:npm": "cat main.js"
   },
   "repository": {
