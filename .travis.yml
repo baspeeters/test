@@ -10,14 +10,15 @@ jobs:
   include:
     - stage: lint
       script: npm run lint
-    - stage: deploy
+    - stage: npm release
       node_js: node
-      email: "$NPM_EMAIL"
-      api_key: "$NPM_TOKEN"
       script:
         - npm run build:clean
         - npm run build:npm
-        - npm publish
-      on:
-        branch: master
-        tags: true
+      deploy:
+        provider: npm
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_TOKEN"
+        on:
+          branch: master
+          tags: true
