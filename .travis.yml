@@ -16,6 +16,7 @@ jobs:
         - npm run build:clean
         - npm run build:npm
       deploy:
+        edge: true
         provider: npm
         email: "$NPM_EMAIL"
         api_key: "$NPM_TOKEN"
